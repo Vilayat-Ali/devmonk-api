@@ -1,12 +1,14 @@
 const express = require('express');
 const userRouter = express.Router();
 
-// User model
-const userModel = require("./../models/user");
-
 // Controllers
 const userControllers = require("./../controllers/userController");
 
-userRouter.get('/', userControllers.test);
+// middleware 
+const middleware = require('../middlewares/authMiddleware');
+
+userRouter.post('/signup', userControllers.signup);
+userRouter.post('/login', middleware.isAuthenticated, userControllers.login);
+userRouter.get('/all', middleware.isAuthenticated, userControllers.getAllUsers);
 
 module.exports = userRouter;
