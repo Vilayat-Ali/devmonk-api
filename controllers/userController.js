@@ -58,3 +58,13 @@ module.exports.getAllUsers = async function(req, res){
         res.json({success: false, message: err.message})
     }
 }
+
+// getting specific user
+module.exports.getMe = async function(req, res){
+    try{
+        const user = await userModel.findOne({email: req.user.email},{ password: 0 });
+        res.json({success: true, userssage: "User data has been fetched successfully", user: user});
+    }catch(err){
+        res.json({success: false, message: err.message})
+    }
+}

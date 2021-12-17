@@ -1,7 +1,7 @@
 // Libraries
 const express = require('express');
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
+const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -10,6 +10,7 @@ const port = Number(process.env.PORT || 5000);
 
 // Configuring app instance 
 app.use(express.json());
+app.use(cors());
 
 // connecting to the database
 try{
