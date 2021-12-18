@@ -8,7 +8,9 @@ const userControllers = require("./../controllers/userController");
 const middleware = require('../middlewares/authMiddleware');
 
 userRouter.post('/signup', userControllers.signup);
-userRouter.post('/login', middleware.isAuthenticated, userControllers.login);
+userRouter.post('/login', userControllers.login);
+userRouter.put('/logout', userControllers.logout);
+userRouter.put('/token', userControllers.refreshToken);
 userRouter.get('/all', middleware.isAuthenticated, userControllers.getAllUsers);
 userRouter.post('/me', middleware.isAuthenticated, userControllers.getMe);
 

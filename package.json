@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "nodemon": "nodemon --exec node server.js"
+    "nodemon": "nodemon --exec node server.js  node authServer.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

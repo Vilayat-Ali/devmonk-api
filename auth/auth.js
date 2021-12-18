@@ -10,7 +10,7 @@ USERINFO
 
 */
 
-module.exports.generateToken = (userInfo) => {
-    const token = jwt.sign(userInfo, process.env.SECRET_TOKEN, {expiresIn: (60*60*24)}); // Valid for 1 day
+module.exports.generateToken = (userInfo, key) => {
+    const token = jwt.sign(userInfo, key, {expiresIn: (60*60*24)}); // Valid for 1 day
     return token;
 }
