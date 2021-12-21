@@ -8,12 +8,13 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
+    "jest": "^27.4.5",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.2"
   },
   "scripts": {
     "start": "node server.js",
-    "nodemon": "nodemon --exec node server.js  node authServer.js"
+    "nodemon": "nodemon --exec node server.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

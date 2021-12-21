@@ -23,9 +23,11 @@ try{
 
 // importing user defined routes
 const userRoutes = require('./routes/userRouter');
+const friendRoutes = require('./routes/friendRouter');
 
 // Mpping routes
 app.use('/api/user', userRoutes);
+app.use('/api/friend', friendRoutes);
 
 app.listen(port , () => {
     console.log(`🚀 Server running on port ${port}`);
